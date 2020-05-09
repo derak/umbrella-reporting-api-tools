@@ -2,3 +2,6 @@
 OrgID = <your org id>
 ManagementAPIKey = <your management api key>
 ManagementAPISecret = <your management api secret>
+
+[SearchOptions]
+SearchCatagory = File Storage

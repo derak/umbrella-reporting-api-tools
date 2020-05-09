@@ -2,14 +2,13 @@ import json
 import requests
 import configparser
 
-category_type = 'File Storage'
-
-# read api creds from config
+# read variables from config
 config = configparser.ConfigParser()
 config.read('config')
 org_id = config['Umbrella']['OrgID']
 mgmt_api_key = config['Umbrella']['ManagementAPIKey']
 mgmt_api_secret = config['Umbrella']['ManagementAPISecret']
+category_type = config['SearchOptions']['SearchCatagory']
 
 # management api url, used to get access token for reporting api
 mgmt_api_url = 'https://management.api.umbrella.com/auth/v2/oauth2/token'
@@ -47,6 +46,12 @@ if __name__ == '__main__':
     # get identities for specific category
     r = get_reporting_request(access_token, '/organizations/{}/top-identities?from=-30days&to=now&limit=1000&offset=0&categories={}'.format(org_id, category_id))
 
-    # loop through and print identity name and type
+    # format row for printing in columns
+    row_format = '{:50} {:20} {}'
+    print('')
+    print(row_format.format('Identity', 'Type', 'Requests'))
+    print('')
+
+    # loop through and print identity name, type and total requests
     for i in r['data']:
-        print('Identity: {}, Type: {}'.format(i['identity']['label'], i['identity']['type']['type']))
+        print(row_format.format(i['identity']['label'], i['identity']['type']['type'], i['counts']['requests']))
