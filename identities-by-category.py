@@ -44,6 +44,9 @@ if __name__ == '__main__':
             category_id = i['id']
             break
 
+    # get identities for specific category
     r = get_reporting_request(access_token, '/organizations/{}/top-identities?from=-30days&to=now&limit=1000&offset=0&categories={}'.format(org_id, category_id))
+
+    # loop through and print identity name and type
     for i in r['data']:
         print('Identity: {}, Type: {}'.format(i['identity']['label'], i['identity']['type']['type']))
