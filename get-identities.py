@@ -67,7 +67,7 @@ if __name__ == '__main__':
         print('\nError, unknown {}, "{}" in config file.'.format(help_text, search_param))
         exit(1)
 
-    # get identities for specific category
+    # get identities for specific category or application
     r = get_reporting_request(access_token, '/organizations/{}/top-identities?from=-30days&to=now&limit=1000&offset=0&{}={}'.format(org_id, type_param, search_id))
 
     # format row for printing in columns
