@@ -39,12 +39,10 @@ if __name__ == '__main__':
         search_param = category_type
         list_endpoint = 'categories'
         type_param = 'categories'
-        help_text = 'category type'
     elif search_type.lower() == 'application':
         search_param = application_name
         list_endpoint = 'applications'
         type_param = 'applicationid'
-        help_text = 'application name'
     else:
         print('\nError, unknown search type. Use either "Category" or "Application" in config file.')
         exit(1)
@@ -64,7 +62,7 @@ if __name__ == '__main__':
                 break
 
     if search_id == '':
-        print('\nError, unknown {}, "{}" in config file.'.format(help_text, search_param))
+        print('\nError, unknown {}, "{}" in config file.'.format(search_param, search_param))
         exit(1)
 
     # get identities for specific category or application
