@@ -46,7 +46,7 @@ if __name__ == '__main__':
         type_param = 'applicationid'
         help_text = 'application name'
     else:
-        print('\nError, unknown search type. Use either Category or Application in config file.')
+        print('\nError, unknown search type. Use either "Category" or "Application" in config file.')
         exit(1)
 
     # get access token
