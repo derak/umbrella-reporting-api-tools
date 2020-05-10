@@ -4,4 +4,8 @@ ManagementAPIKey = <your management api key>
 ManagementAPISecret = <your management api secret>
 
 [SearchOptions]
-SearchCatagory = File Storage
+# Type of search you want, can be "Application" or "Category"
+Type = Application
+
+Category = File Storage
+Application = Google Drive
