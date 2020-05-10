@@ -4,7 +4,7 @@ ManagementAPIKey = <your management api key>
 ManagementAPISecret = <your management api secret>
 
 [SearchOptions]
-# Type of search you want, can be "Application" or "Category"
+# Type of search you want, can be "Category" or "Application"
 Type = Application
 
 Category = File Storage
