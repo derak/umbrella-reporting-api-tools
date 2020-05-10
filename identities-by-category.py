@@ -10,20 +10,22 @@ mgmt_api_key = config['Umbrella']['ManagementAPIKey']
 mgmt_api_secret = config['Umbrella']['ManagementAPISecret']
 category_type = config['SearchOptions']['SearchCatagory']
 
+header = {'content-type': 'application/json'}
+
 # management api url, used to get access token for reporting api
 mgmt_api_url = 'https://management.api.umbrella.com/auth/v2/oauth2/token'
-mgmt_header = {'content-type': 'application/json'}
 
 # reporting api url
 reporting_api_url = 'https://reports.api.umbrella.com/v2'
 
 def get_reporting_request(access_token, endpoint):
-    r = requests.get(reporting_api_url+endpoint, headers={"Authorization": "Bearer %s" % access_token})
+    header['Authorization'] = 'Bearer {}'.format(access_token)
+    r = requests.get(reporting_api_url+endpoint, headers=header)
     body = json.loads(r.content)
     return body
 
 def get_access_token():
-    r = requests.get(mgmt_api_url, headers=mgmt_header, auth=(mgmt_api_key, mgmt_api_secret))
+    r = requests.get(mgmt_api_url, headers=header, auth=(mgmt_api_key, mgmt_api_secret))
     body = json.loads(r.content)
     return body['access_token']
 
