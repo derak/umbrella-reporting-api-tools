@@ -1,4 +1,7 @@
 # umbrella-reporting-api-tools
+
+[![published](https://static.production.devnetcloud.com/codeexchange/assets/images/devnet-published.svg)](https://developer.cisco.com/codeexchange/github/repo/derak/umbrella-reporting-api-tools)
+
 Tools to interact with the Cisco Umbrella Reporting API V2.
 
 ## Setup
