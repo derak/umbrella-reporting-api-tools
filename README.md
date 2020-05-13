@@ -46,12 +46,12 @@ SearchApplication = Google Drive
 ```
 
 # To Run
-First install required packages
+First install required packages:
 ```
 pip3 install -r requirements.txt
 ```
 
-Run script using Python 3 as you would any other Python script
+Run script using Python 3 as you would any other Python script:
 ```
 python3 get-identities.py
 ```
@@ -61,12 +61,12 @@ You will first need to have [Docker](https://docs.docker.com/get-docker/) instal
 
 To run this script in a Docker container, you don't need to install the required packages. Simply use the following `make` commands to build and run the script.
 
-Build Docker container
+Build Docker container:
 ```
 make build
 ````
 
-Run script
+Run script:
 ```
 make get-identities-by-catagory
 ```
