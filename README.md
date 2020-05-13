@@ -57,7 +57,7 @@ python3 get-identities.py
 ```
 
 # Run with Docker
-You will first need to have [Docker](https://docs.docker.com/get-docker/) installed and running. instructions for getting started with Docker can be found [here](https://docs.docker.com/get-docker/). 
+You will first need to have [Docker](https://docs.docker.com/get-docker/) installed and running. Instructions for getting started with Docker can be found [here](https://docs.docker.com/get-docker/).
 
 To run this script in a Docker container, you don't need to install the required packages. Simply use the following `make` commands to build and run the script.
 
